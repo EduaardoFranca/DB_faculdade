@@ -1,0 +1,372 @@
+INSERT 
+
+INSERT INTO tipo_telefone
+	(tipo_telefone)
+VALUES
+('Celular'),
+    ('Comerc'),
+    ('Residen'),
+    ('Whatsapp');    
+SELECT * FROM tipo_telefone;
+
+INSERT INTO Telefone
+	(num_telefone, fk_cod_tipo)
+VALUES
+	('61 99914-2536', '33'),
+    ('61 99914-2536', '34'),
+    ('61 99914-8854', '35'),
+    ('61 99914-8854', '36'),
+    ('61 99914-2511', '33'),
+	('61 99914-2511', '34'),
+	('61 99914-2588', '35'),
+	('61 99914-2588', '36'),
+    ('61 99914-8811', '33'),
+	('61 99914-8811', '34'),
+    ('61 99914-2881', '35'),
+    ('61 3424-2511', '36'),
+    ('61 3384-8811', '33'),
+    ('61 81321-2511', '34'),
+    ('61 3654-5847', '35'),
+    ('61 3877-4477', '36'),
+    ('61 81321-9988', '34'),
+    ('61 3321-8884', '35'),
+    ('61 3544-2511', '36');
+SELECT * FROM Telefone;
+
+INSERT INTO Departamento
+	(nome_departamento)
+VALUES
+	('Biologicas'),
+    ('Ciencias Humanas'),
+    ('Estagio'),
+    ('Matematica'),
+    ('Tec. Informação');
+
+SELECT * FROM Departamento;
+
+INSERT INTO Curso
+	(nome_curso, fk_cod_departamento)
+VALUES
+	('Analise de sistemas', '10'),
+    ('Biologia', '6'),
+    ('Engenharia eletrica', '9'),
+    ('Matematica', '9'),
+    ('Historia', '7'),
+    ('Pscicologia', '7'),
+    ('Física', '9'),
+    ('Inglês', '7'),
+    ('Redes', '10');
+    
+SELECT * FROM Curso;
+
+
+INSERT INTO Turma
+	(periodo, num_alunos, dt_inicio, dt_fim, fk_cod_curso)
+VALUES
+	('Mat', '30', '2022-01-01', '2022-06-30', '1'),
+    ('Mat', '30', '2022-01-01', '2022-06-30', '2'),
+    ('Mat', '30', '2022-01-01', '2022-06-30', '5'),
+    ('Vesp', '30', '2022-01-01', '2022-06-30', '7'),
+    ('Vesp', '30', '2022-01-01', '2022-06-30', '8'),
+    ('Ves', '30', '2022-01-01', '2022-06-30', '6'),
+    ('Not', '30', '2022-01-01', '2022-06-30', '3'),
+    ('Not', '30', '2022-01-01', '2022-06-30', '9');
+
+SELECT * FROM Turma;
+
+INSERT INTO Aluno
+	(nome_aluno, sobrenome_aluno, cpf, status, sexo, nome_pai, nome_mae, email, fk_cod_curso, fk_cod_turma, fk_cod_endereco)
+VALUES
+	('Alan', 'Matos', '94782132310', '1', 'M', 'João Rosa', 'Maria Rosa', 'alanm@msn.com', '21', '25', '51'),
+    ('Alana', 'Trindade', '94782132325', '2', 'F', 'Pedro Trindade', 'Joana Trindade', 'alana@yahoo.com', '20', '26', '52'),
+    ('Bianca', 'Silva', '99182150810', '1', 'F', 'Antonio Teixeira', 'Cintia Teixeira', 'biancasilva@gmail.com', '21', '27', '53'),
+    ('João', 'Gomes', '92382131317', '1', 'M', 'Pedro Gomes', 'Maria Gomes', 'jg@msn.com', '22', '28', '54'),
+    ('Everton', 'Ribeiro', '93282132716', '2', 'M', 'Claudio Ribeiro', 'Antonia Ribeiro', 'evertonr7@gmail.com', '23', '29', '37'),
+    ('Arthur', 'Coimbra', '34782132315', '1', 'M', 'Antonio Coimbra', 'Maria Coimbra', 'arthurc@gmail.com', '24', '29', '38'),
+    ('Beatriz', 'Coimbra', '34782132320', '1', 'F', 'Antonio Coimbra', 'Maria Coimbra', 'beatriz@gmail.com', '25', '32', '39'),
+    ('Gabriel', 'Barbosa', '92382132708', '1', 'M', 'Ricardo Barbosa', 'Valdenice Barbosa', 'gabi@msn.com', '26', '31', '40'),
+    ('Vitoria', 'Alves', '91037856712', '1', 'F', 'Afonso Alves', 'Margarida Alves', 'vitorinha@yahoo.com', '27', '32', '41'),
+    ('Giorgian', 'De Arrascaeta', '90150359154', '1', 'M', 'George De Arrascaeta', 'Giorgina De Arrascaeta', 'arrascaeta14@gmail.com', '21', '30', '39'),
+    ('Brenda', 'Souza', '99382150807', '1', 'F', 'Lazaro Souza', 'Rita Souza', 'brendinha@gmail.com', '25', '31', '40'),
+	('Tayane', 'Carvalho', '91156874112', '1', 'F', 'João Carvalho', 'Tais Carvalho', 'taycarvalho@msn.com', '24', '27', '41'),
+    ('Willian', 'Arão', '91282131701', '1', 'M', 'Carlos Arão', 'Antonia Arão', 'warao5@gmail.com', '27', '26', '37'),
+    ('Virginia', 'Fonseca', '91137856810', '1', 'F', 'Margareth Fonseca', 'Sebastião Fonseca', 'virgininha@yahoo.com', '27', '30', '53'),
+    ('Victor', 'Souza', '90153259112', '1', 'M', 'Ricardo Souza', 'Anna Souza', 'vitinho11@gmail.com', '21', '29', '54'),
+    ('Rodrigo Caio', 'Carvalho', '90143254873', '2', 'M', 'Marcos Carvalho', 'Dora Carvalho', 'rccarvalho@msn.com', '27', '32', '45'),
+    ('Patricia', 'Rondon', '91053271204', '1', 'F', 'Julio Rondon', 'Amanda Rondon', 'patirondon@msn.com', '25', '31', '46'),
+	('Bruno Henrique', 'Santos', '91532756821', '1', 'M', 'Angelo Santos', 'Cristina Santos', 'bh27@msn.com', '24', '29', '37'),
+    ('Diego', 'Ribas', '90276853210', '1', 'M', 'Joaquim Ribas', 'Nilda Ribas', 'diego10@msn.com', '26', '32', '38'),
+	('Thiago', 'Maia', '91533322211', '1', 'M', 'Joaquim Maia', 'Luisa Maia', 'tm08@yahoo.com', '22', '28', '49');    
+SELECT * FROM Aluno;
+
+
+INSERT INTO Telefone_aluno
+	(fk_RA, fk_cod_telefone)
+VALUES
+('41','21'),
+('42','22'),
+('43','23'),
+('44','24'),
+('45','25'),
+('46','26'),
+('47','27'),
+('48','28'),
+('49','29'),
+('50','30'),
+('51', '31'),
+('52', '32'),
+('53', '33'),
+('54', '34'),
+('55', '35'),
+('56', '36'),
+('57', '37'),
+('58', '38'),
+('59', '39');
+SELECT * FROM Telefone_aluno;
+
+INSERT INTO Disciplina
+	(nome_disciplina, carga_horaria, descricao, num_alunos, fk_cod_departamento)
+VALUES
+	('Eletronica', '30', 'digital', '30', '1'),
+    ('Pscicologia', '25', 'cognitiva', '25', '2'),
+    ('Programação', '40', 'em C', '30', '3'),
+    ('Raciocinio', '40', 'logico', '40', '4'),
+    ('Analise', '25', 'de Requisitos', '30', '5'),
+    ('Engenharia', '30', 'de Software', '30', '1'),
+    ('Banco de Dados', '45', 'Banco de Dados', '25', '1'),
+    ('Programação', '40', 'JAVA', '30', '2'),
+    ('UX/UI', '20', 'UX/UI', '25', '4'),
+    ('Redes', '40', 'Computadores', '30', '3'),
+    ('Lógica', '60', 'Programação', '30', '4'),
+    ('Regressão', '60', 'Linear', '30', '5'),
+    ('Regressão', '60', 'Logística', '30', '1'),
+    ('Estatística', '60', 'Descritiva', '30', '2'),
+    ('Estatística', '50', 'Inferêncial', '25', '3'),
+    ('Números', '40', 'Complexos', '30', '4'),
+    ('Cálculo', '40', 'de Derivadas', '25', '5'),
+    ('Cálculo', '40', 'de Diferêcial', '30', '1'),
+    ('Cálculo', '40', 'Integral', '30', '2'),
+    ('Filosofia', '30', 'Filosofia','30', '3'),
+    ('Sociologia', '40', 'Sociologia','25', '4'),
+    ('Teoria', '40', 'do Conhecimento','30', '5'),
+    ('Ética', '30', 'Ética','30', '1'),
+    ('Política ', '40', 'Política ','25', '2'),
+    ('Cidadania', '30', 'Cidadania','50', '3'),
+    ('Antropologia', '40', 'Contemporânea','50', '4'),
+    ('Introdução', '40', 'à Ecologia','30', '5'),
+    ('Zoologia', '50', 'dos Invertebrados','25', '1'),
+    ('Zoologia', '45', 'dos Vertebrados.','45', '2'),
+('Estágio Obrigatório', '200', 'Estágio Obrigatório','80', '3');
+
+INSERT INTO Curso_disciplina
+	INSERT INTO Curso_disciplina
+	(fk_cod_curso, fk_cod_disciplina)
+VALUES
+	('19',	'603'),
+	('20',	'604'),
+	('21',	'605'),
+	('22',	'606'),
+	('23',	'607'),
+	('24',	'608'),
+	('25',	'609'),
+	('26',	'610'),
+	('19',	'611'),
+	('20',	'612'),
+	('21',	'613'),
+	('22',	'614'),
+	('23',	'615'),
+	('24',	'616'),
+	('25',	'617'),
+	('26',	'618'),
+	('27',	'619'),
+	('27',	'620'),
+	('19',	'621'),
+	('20',	'622'),
+	('21',	'623'),
+	('22',	'624'),
+	('23',	'625'),
+	('24',	'626'),
+	('25',	'627'),
+	('26',	'628'),
+	('27',	'629'),
+	('19',	'630'),
+	('20',	'631'),
+	('21',	'632');
+SELECT * FROM Curso_disciplina;
+
+INSERT INTO Professor
+	(nome_professor, sobrenome_professor, `STATUS`, fk_cod_departamento)
+VALUES
+	('Maria', 'Silva', '1', '6'),
+    ('Pedro', 'Maia', '1', '7'),
+    ('Reginaldo', 'Alves', '1', '8'),
+    ('Priscila', 'Alcantara', '1', '9'),
+    ('João', 'Cardoso', '1', '10'),
+    ('Luiz', 'Ferreira', '1', '6'),
+    ('Gustavo', 'Mendes', '1', '7'),
+    ('Kelly', 'Teixeira', '2', '8'),
+    ('Gabriela', 'Barbosa', '2', '9'),
+    ('Thiago', 'Rodrigues', '2', '10');
+    
+SELECT * FROM Professor;
+
+INSERT INTO Professor_disciplina
+	(fk_cod_professor, fk_cod_disciplina)
+VALUES
+	('51','603'),
+	('52','604'),
+	('53','605'),
+	('54','606'),
+	('55','607'),
+	('56','608'),
+	('57','609'),
+	('58','610'),
+	('59','611'),
+	('50','612'),
+	('31','613'),
+	('32','614'),
+	('33','615'),
+	('34','616'),
+	('35','617'),
+	('36','618'),
+	('37','619'),
+	('38','620'),
+	('39','621'),
+	('40','622'),
+	('41','623'),
+	('42','624'),
+	('43','625'),
+	('44','626'),
+	('45','628'),
+	('46','629'),
+	('47','630'),
+	('48','631'),
+	('49','632'),
+	('50','610');
+SELECT * FROM Professor_disciplina;
+
+
+INSERT INTO Aluno_Disciplina
+	(fk_ra, fk_cod_disciplina)
+VALUES
+	('41','603'),
+	('42','604'),
+	('43','605'),
+	('44','606'),
+	('45','607'),
+	('46','608'),
+	('47','609'),
+	('48','610'),
+	('49','611'),
+	('50','612'),
+	('51','613'),
+	('52','614'),
+	('53','615'),
+	('54','616'),
+	('55','617'),
+	('56','618'),
+	('57','619'),
+	('58','620'),
+	('59','621'),
+	('60','622'),
+	('61','623'),
+	('62','624'),
+	('63','625'),
+	('64','626'),
+	('65','627'),
+	('66','628'),
+	('67','629'),
+	('68','630'),
+	('69','631'),
+	('70','632');
+SELECT * FROM Aluno_Disciplina;
+
+
+INSERT INTO Historico
+	(dt_inicio, dt_fim, fk_ra)
+VALUES
+	('2022-01-03','2022-06-30','41'),
+	('2022-01-03','2022-06-30','42'),
+	('2022-01-03','2022-06-30','43'),
+	('2022-01-03','2022-06-30','44'),
+	('2022-01-03','2022-06-30','45'),
+	('2022-01-03','2022-06-30','46'),
+	('2022-01-03','2022-06-30','47'),
+	('2022-01-03','2022-06-30','48'),
+	('2022-01-03','2022-06-30','49'),
+	('2022-01-03','2022-06-30','50'),
+	('2022-01-03','2022-06-30','51'),
+	('2022-01-03','2022-06-30','52'),
+	('2022-01-03','2022-06-30','53'),
+	('2022-01-03','2022-06-30','54'),
+	('2022-01-03','2022-06-30','55'),
+	('2022-01-03','2022-06-30','56'),
+	('2022-01-03','2022-06-30','57');
+SELECT * FROM Historico;
+
+INSERT INTO Disciplina_historico
+	(nota, frequencia, fk_cod_historico, fk_cod_disciplina)
+VALUES
+	('6.5','1','1','603'),
+	('6.0','1','2','604'),
+	('7.5','1','3','605'),
+	('9.0','1','4','606'),
+	('8.5','1','5','607'),
+	('8.5','1','6','608'),
+	('7.0','1','7','609'),
+	('5.5','1','8','610'),
+	('9.0','1','9','611'),
+	('6.5','1','10','612'),
+	('6.0','1','1','613'),
+	('7.5','1','2','614'),
+	('9.0','1','3','615'),
+	('8.5','1','4','616'),
+	('8.5','1','5','617'),
+	('7.0','1','6','618'),
+	('5.5','1','7','619');	('9.0','1','8','78'),
+	('6.5','1','9','79'),
+	('6.0','1','10','80'),
+	('7.5','1','1','81'),
+	('9.0','1','2','82'),
+	('8.5','1','3','83'),
+	('8.5','1','4','84'),
+	('7.0','1','5','85'),
+	('5.5','1','6','86'),
+	('9.0','1','7','87'),
+	('5.5','1','8','88'),
+	('9.0','1','9','89'),
+	('6.5','1','10','90');
+    
+SELECT * FROM Disciplina_historico;
+
+
+INSERT INTO Tipo_logradouro
+	(tipo_logradouro)
+VALUES 
+	('Alameda'),
+    ('Avenida'),
+	('Chacara'),
+	('Rua'),
+    ('Quadra');
+
+INSERT INTO Endereco
+	(nome_rua, numero_rua, complemento, cep, fk_cod_tipo_logradouro)
+VALUES
+	('Rua 6', '489', 'Casa esquina', '72302207', '4'),
+    ('Rua 3', '460', 'Conjunto M', '72302208', '4'),
+    ('Alameda', '384', 'Prox metro', '72302209', '1'),
+    ('Avenida Panama', '350', 'Ao lado do pet shop', '72302210', '2'),
+	('Avenida 6', '25', 'Conj A', '72302211', '2'),
+    ('Rua São João', '378', 'Sobrado azul', '72302212', '4'),  
+    ('Chacara Santa Luzia', '25', 'Conj M', '72302211', '3'),
+    ('Quadra 6', '378', 'Sobrado verde', '72302212', '5'),
+    ('Chacara Projetada', '329', 'Conj 17', '72302215', '3'),
+    ('Quadra 10', '7', 'Lote 20', '72302216', '5'),
+	('Alameda São Jorge', '341', 'Casa roxa', '72302217', '1'),
+    ('Alameda Enseada', '320', 'Lote 2', '72302218', '1'),
+    ('Quadra 108', '76', 'Loja do Marceneiro', '72302219', '5'),
+    ('Chacara Rui Barbosa', '343', 'Lote 10', '72302220', '3'),
+    ('Avenida Califórnia', '84', 'Loja do Tião', '72302221', '2'),
+    ('Quadra 306', '50', 'Lote 306', '72302222', '3'),
+    ('Avenida São João', '76', 'Lote 3', '72302223', '2'),
+    ('Avenida Santos Dumont', '4', 'Lote 31', '72302224', '1');
